@@ -188,6 +188,55 @@
       margin-bottom: 15px;
     }
 
+    /* --- TESTIMONIALS SECTION --- */
+    #testimonials {
+      padding: 80px 10%;
+      text-align: center;
+      background-color: var(--white);
+    }
+    #testimonials h2 {
+      font-family: 'Georgia', serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .sub-heading {
+      color: var(--accent-dark);
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background-color: var(--white);
+      border-left: 4px solid var(--accent-light);
+      padding: 30px;
+      border-radius: 4px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(22, 37, 6, 0.04);
+    }
+    .testimonial-card p {
+      font-style: italic;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+    .client-info {
+      font-weight: bold;
+      font-size: 14px;
+      color: var(--accent-dark);
+    }
+    .client-edu {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 2px;
+    }
+
     /* --- CONTACT FORM --- */
     #contact {
       background-color: var(--cream);
@@ -268,14 +317,17 @@
       border-radius: 4px;
       font-weight: bold;
       display: none;
+      text-align: center;
     }
     .status-success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
     }
     .status-error {
       background-color: #f8d7da;
       color: #721c24;
+      border: 1px solid #f5c6cb;
     }
 
     /* --- FOOTER --- */
@@ -303,6 +355,9 @@
       header h1 {
         font-size: 32px;
       }
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -310,131 +365,3 @@
 
   <nav>
     <div class="logo">Paper Pancit</div>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why-human">Our Promise</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="#contact" class="nav-btn">Consult an Expert</a>
-  </nav>
-
-  <header>
-    <span class="badge">100% Human-Driven. No AI Shortcuts.</span>
-    <h1>Our tagline</h1>
-    <p>Our pitch</p>
-    <div class="hero-btns">
-      <a href="#services" class="btn-primary">View Core Services</a>
-      <a href="#contact" class="btn-secondary">Get Free Estimate</a>
-    </div>
-  </header>
-
-  <section id="services">
-    <h2>Our Specializations</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Research Paper Consultation & Tutorials</h3>
-        <p>blahblah</p>
-      </div>
-      <div class="card">
-        <h3>Research Paper Editing & Proofreading</h3>
-        <p>blah blah</p>
-      </div>
-      <div class="card">
-        <h3>Thematic Editing and Analysis</h3>
-        <p>Blah blah</p>
-      </div>
-      <div class="card">
-        <h3>Research Question Editing and Validation</h3>
-        <p>Blah blah</p>
-        </div>
-      <div class="card">
-        <h3>Other Academic Tutorials</h3>
-        <p>Blah blah</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="manifesto" id="why-human">
-    <div class="manifesto-inner">
-      <h3>The Integrity Guarantee</h3>
-      <p>Generic publication pipelines use AI models that miss systemic contextual flaws and flag structural anomalies inside modern institutional code reviews. Verdant Academic matches your writing exclusively with real human academic specialists.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Submit Your Project Details</h2>
-    <p>Provide your assignment parameters below. Your data maps automatically to our review sheet.</p>
-
-    <form id="academic-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID_HERE" method="POST">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="Client Name" placeholder="Dr. Sarah Jenkins" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="Client Email" placeholder="s.jenkins@university.edu" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="service">Select Requested Service</label>
-        <select id="service" name="Requested Service">
-          <option value="Consultation & Tutorial">Research Paper Consultation & Tutorial</option>
-          <option value="Editing & Proofreading">Research Paper Editing & Proofreading</option>
-          <option value="Qualitative Data Analysis">Qualitative Data Analysis</option>
-          <option value="Other Tutorials">Other Academic Tutorials</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Project Parameters & Deadlines</label>
-        <textarea id="message" name="Project Details" placeholder="Please outline your current word count, dataset parameters, and timeline goal targets..." required></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">Send Project Scope</button>
-      <div id="form-status"></div>
-    </form>
-  </section>
-
-  <footer>
-    <p><strong>Paper Pancit © 2026</strong></p>
-    <p>Ethical Academic Advisory Group. All Data Transfers Are Private and Encrypted.</p>
-  </footer>
-
-  <script>
-    const form = document.getElementById('academic-form');
-    const status = document.getElementById('form-status');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault(); // Stop standard browser redirects
-      status.style.display = 'block';
-      status.className = ''; 
-      status.innerText = "Processing submission securely...";
-
-      const data = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          status.className = 'status-success';
-          status.innerText = "Success! Your submission has been captured and routed directly to our spreadsheet queue.";
-          form.reset();
-        } else {
-          const errorData = await response.json();
-          status.className = 'status-error';
-          status.innerText = errorData.errors ? errorData.errors.map(err => err.message).join(", ") : "Oops! There was a network execution issue sending your form entry.";
-        }
-      } catch (error) {
-        status.className = 'status-error';
-        status.innerText = "Error interacting with form server. Check network connection configs.";
-      }
-    });
-  </script>
-</body>
-</html>
