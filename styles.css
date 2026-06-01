@@ -160,9 +160,53 @@ header p {
   opacity: 0.9;
 }
 
+/* --- ABOUT & MISSION SECTION --- */
+.about-section {
+  padding: 80px 8%;
+  background-color: var(--cream);
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-block {
+  flex: 1;
+}
+
+.about-block h2 {
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.about-block p {
+  color: var(--primary-dark);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* --- WHY US SECTION --- */
+.why-us-section {
+  padding: 80px 8% 40px;
+  text-align: center;
+  background-color: var(--white);
+}
+
+.why-us-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--primary-dark);
+}
+
 /* --- SERVICES SECTION --- */
 #services {
-  padding: 80px 8%;
+  padding: 40px 8% 80px;
   text-align: center;
 }
 
@@ -204,27 +248,36 @@ header p {
   font-size: 15px;
 }
 
-/* --- ANTI-AI MANIFESTO --- */
-.manifesto {
+/* --- SERVICE RATES TABLE --- */
+.rates-section {
+  padding: 80px 8%;
+  text-align: center;
+  background-color: var(--white);
+}
+
+.rates-section h2 {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.table-container {
+  max-width: 900px;
+  margin: 30px auto 0;
+  border: 1px solid var(--cream);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(22, 37, 6, 0.02);
+}
+
+.rates-table th {
   background-color: var(--primary-dark);
   color: var(--white);
-  padding: 60px 8%;
-  text-align: center;
-}
-
-.manifesto-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  border: 2px solid var(--gold);
-  padding: 45px 30px;
-  border-radius: 6px;
-}
-
-.manifesto h3 {
   font-family: 'Georgia', serif;
-  color: var(--gold);
-  font-size: 24px;
-  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.rates-table tr:nth-child(even) {
+  background-color: rgba(239, 234, 197, 0.2); /* Soft tints of background cream */
 }
 
 /* --- TESTIMONIALS SECTION --- */
@@ -335,7 +388,7 @@ label {
 
 input, select, textarea {
   width: 100%;
-  padding: 14px 12px; /* Marginally increased for easier touch logging */
+  padding: 14px 12px; 
   border: 1px solid var(--accent-light);
   border-radius: 4px;
   font-size: 16px; /* Prevents auto-zoom tracking behaviors on Safari iOS inputs */
@@ -410,9 +463,14 @@ footer p {
   /* Dynamic Text Modifications */
   header h1 { font-size: 32px; }
   header p { font-size: 16px; margin-bottom: 30px; }
-  #services h2, #testimonials h2, #contact h2 { font-size: 28px; }
+  #services h2, #testimonials h2, #contact h2, .about-block h2, .why-us-section h2, .rates-section h2 { font-size: 28px; }
   
-  /* Grid Structural Compression to Vertical Real Estate */
+  /* Layout Adjustments */
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
   .form-row {
     flex-direction: column;
     gap: 20px;
@@ -486,9 +544,5 @@ footer p {
   .grid, .testimonial-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .manifesto-inner {
-    padding: 30px 20px;
   }
 }

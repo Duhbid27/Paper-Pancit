@@ -24,36 +24,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* --- DATA TRANSMISSION SCRIPT INTO INTERFACED GOOGLE SHEET --- */
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault(); 
-    
-    status.style.display = 'block';
-    status.className = ''; 
-    status.style.color = '#162506';
-    status.innerText = "Processing submission securely...";
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); 
+      
+      status.style.display = 'block';
+      status.className = ''; 
+      status.style.color = '#162506';
+      status.innerText = "Processing submission securely...";
 
-    const formData = new URLSearchParams(new FormData(form));
+      const formData = new URLSearchParams(new FormData(form));
 
-    try {
-      await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      });
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
 
-      status.className = 'status-success';
-      status.style.color = '#155724';
-      status.innerText = "Success! Your submission has been captured and routed directly to our spreadsheet queue.";
-      form.reset();
+        status.className = 'status-success';
+        status.style.color = '#155724';
+        status.innerText = "Success! Your submission has been captured and routed directly to our spreadsheet queue.";
+        form.reset();
 
-    } catch (error) {
-      status.className = 'status-error';
-      status.style.color = '#721c24';
-      status.innerText = "There was an error communicating with the spreadsheet. Please verify your internet connection.";
-      console.error("Transmission error encountered:", error);
-    }
-  });
+      } catch (error) {
+        status.className = 'status-error';
+        status.style.color = '#721c24';
+        status.innerText = "There was an error communicating with the spreadsheet. Please verify your internet connection.";
+        console.error("Transmission error encountered:", error);
+      }
+    });
+  }
 });
