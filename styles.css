@@ -190,6 +190,63 @@ header p {
   line-height: 1.7;
 }
 
+/* --- MEET THE TEAM SUBSECTION --- */
+.team-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.team-heading {
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 37, 6, 0.1);
+  box-shadow: 0 4px 10px rgba(22, 37, 6, 0.02);
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-member-info h4 {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.team-member-info .role {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--accent-dark);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-member-info .bio {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 /* --- WHY US SECTION --- */
 .why-us-section {
   padding: 80px 8% 40px;
@@ -463,7 +520,7 @@ footer p {
   /* Dynamic Text Modifications */
   header h1 { font-size: 32px; }
   header p { font-size: 16px; margin-bottom: 30px; }
-  #services h2, #testimonials h2, #contact h2, .about-block h2, .why-us-section h2, .rates-section h2 { font-size: 28px; }
+  #services h2, #testimonials h2, #contact h2, .about-block h2, .why-us-section h2, .rates-section h2, .team-heading { font-size: 28px; }
   
   /* Layout Adjustments */
   .about-container {
@@ -541,7 +598,7 @@ footer p {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .grid, .testimonial-grid {
+  .grid, .testimonial-grid, .team-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
